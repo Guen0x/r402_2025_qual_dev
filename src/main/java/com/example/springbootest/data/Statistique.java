@@ -1,16 +1,11 @@
 package com.example.springbootest.service;
+
 import com.example.springbootest.data.Voiture;
 
 public interface Statistique {
 
-package com.example.demo.service;
+    void ajouter(Voiture voiture);
 
-import com.example.demo.data.Voiture;
+    Echantillon prixMoyen() throws ArithmeticException;
 
-    public interface Statistique {
-
-        public void ajouter(Voiture voiture);
-
-        public Echantillon prixMoyen() throws ArithmeticException;
-
-    }
+}
