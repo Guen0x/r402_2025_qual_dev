@@ -1,4 +1,4 @@
-package com.example.springbootest.service;
+package com.example.springbootest.data;
 
 /**
  * Classe de données qui permet d'encpsulée de données
@@ -32,4 +32,10 @@ public class Echantillon {
     public void setPrixMoyen(int prixMoyen) {
         this.prixMoyen = prixMoyen;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
 }

@@ -1,6 +1,6 @@
-package com.example.demo.service;
+package com.example.springbootest.data;
 
-import com.example.demo.data.Voiture;
+import com.example.springbootest.data.Voiture;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 
 @Service
-public class StatistiqueImpl implements Statistique{
+public class StatistiqueImpl implements com.example.springbootest.data.Statistique {
 
     List<Voiture> voitures = new ArrayList<Voiture>();
 
@@ -18,14 +18,15 @@ public class StatistiqueImpl implements Statistique{
     }
 
     @Override
-    public Echantillon prixMoyen() throws ArithmeticException {
+    public com.example.springbootest.data.Echantillon prixMoyen() throws ArithmeticException {
         int prixTotal = 0;
         int nombreDeVoitures = 0;
         Iterator<Voiture> iterator = voitures.iterator();
         while(iterator.hasNext()){
-            prixTotal = prixTotal + iterator.next().getPrix();
+            prixTotal = (int) (prixTotal + iterator.next().getPrix());
             nombreDeVoitures++;
         }
-        return new Echantillon(nombreDeVoitures, prixTotal/nombreDeVoitures);
+        return new com.example.springbootest.data.Echantillon(nombreDeVoitures, prixTotal/nombreDeVoitures);
     }
+
 }

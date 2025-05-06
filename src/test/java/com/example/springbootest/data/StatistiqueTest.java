@@ -1,18 +1,18 @@
+
+package com.example.springbootest.data;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class StatistiqueTest {
-package com.example.springbootest.service;
-
-import com.example.demo.data.Voiture;
-import com.example.demo.service.Echantillon;
-import com.example.demo.service.StatistiqueImpl;
+import com.example.springbootest.data.Voiture;
+import com.example.springbootest.data.Echantillon;
+import com.example.springbootest.data.StatistiqueImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
     @SpringBootTest
-    public class StatistiqueImplTest {
+    public class StatistiqueTest {
 
         @Test
         void when_ajouter_voiture_should_increase_internal_list_size() {
@@ -25,7 +25,7 @@ import org.springframework.boot.test.context.SpringBootTest;
             Echantillon echantillon = statistique.prixMoyen();
 
             // Assert
-            Assertions.assertEquals(1, echantillon.getNombre(), "Le nombre de voitures doit être 1");
+            Assertions.assertEquals(1, echantillon.getNombreDeVoitures(), "Le nombre de voitures doit être 1");
         }
 
         @Test
@@ -40,8 +40,8 @@ import org.springframework.boot.test.context.SpringBootTest;
             Echantillon echantillon = statistique.prixMoyen();
 
             // Assert
-            Assertions.assertEquals(3, echantillon.getNombre(), "Le nombre de voitures doit être 3");
-            Assertions.assertEquals(20000, echantillon.getMoyenne(), "La moyenne doit être 20000");
+            Assertions.assertEquals(3, echantillon.getNombreDeVoitures(), "Le nombre de voitures doit être 3");
+            Assertions.assertEquals(20000, echantillon.getPrixMoyen(), "La moyenne doit être 20000");
         }
 
         @Test
@@ -64,8 +64,8 @@ import org.springframework.boot.test.context.SpringBootTest;
             Echantillon echantillon = statistique.prixMoyen();
 
             // Assert
-            Assertions.assertEquals(2, echantillon.getNombre(), "Le nombre de voitures doit être 2");
-            Assertions.assertEquals(55000, echantillon.getMoyenne(), "La moyenne doit être 55000");
+            Assertions.assertEquals(2, echantillon.getNombreDeVoitures(), "Le nombre de voitures doit être 2");
+            Assertions.assertEquals(55000, echantillon.getPrixMoyen(), "La moyenne doit être 55000");
         }
 
         @Test
@@ -79,9 +79,8 @@ import org.springframework.boot.test.context.SpringBootTest;
             Echantillon echantillon = statistique.prixMoyen();
 
             // Assert
-            Assertions.assertEquals(2, echantillon.getNombre(), "Le nombre de voitures doit être 2");
-            Assertions.assertEquals(25000, echantillon.getMoyenne(), "La moyenne doit être 25000");
+            Assertions.assertEquals(2, echantillon.getNombreDeVoitures(), "Le nombre de voitures doit être 2");
+            Assertions.assertEquals(25000, echantillon.getPrixMoyen(), "La moyenne doit être 25000");
         }
     }
 
-}
